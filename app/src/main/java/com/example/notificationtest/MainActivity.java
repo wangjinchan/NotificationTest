@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                 //8.0一张版本判断
                 if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.O){
-                    NotificationChannel channel=new NotificationChannel("normal","NORMAL",NotificationManager.IMPORTANCE_HIGH);
+                    NotificationChannel channel=new NotificationChannel("important","Important",NotificationManager.IMPORTANCE_HIGH);
                     assert manager != null;
                     manager.createNotificationChannel(channel);
                 }
@@ -38,7 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 Intent intent=new Intent(this,NotificationActivity.class);
                 PendingIntent pendingIntent=PendingIntent.getActivity(this,0,intent,0);
 
-                Notification notification= new NotificationCompat.Builder(this,"normal")
+                Notification notification= new NotificationCompat.Builder(this,"important")
                         .setContentTitle("收到一条通知")
                         .setContentText("你好")
                         .setSmallIcon(R.mipmap.ic_launcher)//通知图标
